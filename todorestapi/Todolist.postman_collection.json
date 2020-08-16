@@ -121,6 +121,37 @@
 						}
 					},
 					"response": []
+				},
+				{
+					"name": "/restapi/todo/create_db_rows",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"description\": \"Create from json NOS\",\r\n    \"term\": \"2020-08-13T22:00:00.000+00:00\",\r\n    \"priority\": {\"id\": 1}\r\n}\r\n\r\n"
+						},
+						"url": {
+							"raw": "http://localhost:8080/restapi/todo/create_db_rows",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"restapi",
+								"todo",
+								"create_db_rows"
+							]
+						}
+					},
+					"response": []
 				}
 			],
 			"protocolProfileBehavior": {}

@@ -1,0 +1,28 @@
+INSERT INTO todo_list (created, description, priority_id, term) VALUES (CURRENT_DATE, 'This is the first TODO', 1, CURRENT_DATE + INTERVAL '12' DAY);
+INSERT INTO todo_list (created, description, priority_id, term) VALUES (CURRENT_DATE, 'This is the second TODO', 2, CURRENT_DATE + INTERVAL '5 'DAY);
+INSERT INTO todo_list (created, description, priority_id, term) VALUES (CURRENT_DATE, 'This is the third TODO', 3, CURRENT_DATE + INTERVAL '2' DAY);
+INSERT INTO todo_list (created, description, priority_id, term) VALUES (CURRENT_DATE, 'This is the fourth TODO', 2, CURRENT_DATE + INTERVAL '5 'DAY);
+INSERT INTO todo_list (created, description, priority_id, term) VALUES (CURRENT_DATE, 'This is the fifth TODO', 1, CURRENT_DATE + INTERVAL '14' DAY);
+INSERT INTO todo_list (created, description, priority_id, term) VALUES (CURRENT_DATE, 'This is the sixth TODO', 3, CURRENT_DATE + INTERVAL '2' DAY);
+INSERT INTO todo_list (created, description, priority_id, term) VALUES (CURRENT_DATE, 'This is the seventh TODO', 3, CURRENT_DATE + INTERVAL '2' DAY);
+INSERT INTO todo_list (created, description, priority_id, term) VALUES (CURRENT_DATE, 'This is the eighth TODO', 3, CURRENT_DATE + INTERVAL '2' DAY);
+INSERT INTO todo_list (created, description, priority_id, term) VALUES (CURRENT_DATE, 'This is the nineth TODO', 1, CURRENT_DATE + INTERVAL '14' DAY);
+INSERT INTO todo_list (created, description, priority_id, term) VALUES (CURRENT_DATE, 'This is the tenth TODO', 1, CURRENT_DATE + INTERVAL '14' DAY);
+INSERT INTO todo_list (created, description, priority_id, term) VALUES (CURRENT_DATE, 'This is the eleventh TODO', 1, CURRENT_DATE + INTERVAL '14' DAY);
+INSERT INTO todo_list (created, description, priority_id, term) VALUES (CURRENT_DATE, 'This is the twelfth TODO', 1, CURRENT_DATE + INTERVAL '14' DAY);
+INSERT INTO todo_list (created, description, priority_id, term) VALUES (CURRENT_DATE, 'This is the first TODO', 1, CURRENT_DATE + INTERVAL '12' DAY);
+INSERT INTO todo_list (created, description, priority_id, term) VALUES (CURRENT_DATE, 'This is the second TODO', 2, CURRENT_DATE + INTERVAL '5 'DAY);
+INSERT INTO todo_list (created, description, priority_id, term) VALUES (CURRENT_DATE, 'This is the third TODO', 3, CURRENT_DATE + INTERVAL '2' DAY);
+INSERT INTO todo_list (created, description, priority_id, term) VALUES (CURRENT_DATE, 'This is the fourth TODO', 2, CURRENT_DATE + INTERVAL '5' DAY);
+INSERT INTO todo_list (created, description, priority_id, term) VALUES (CURRENT_DATE, 'This is the fifth TODO', 1, CURRENT_DATE + INTERVAL '14' DAY);
+INSERT INTO todo_list (created, description, priority_id, term) VALUES (CURRENT_DATE, 'This is the sixth TODO', 3, CURRENT_DATE + INTERVAL '2' DAY);
+INSERT INTO todo_list (created, description, priority_id, term) VALUES (CURRENT_DATE, 'This is the seventh TODO', 3, CURRENT_DATE + INTERVAL '2' DAY);
+INSERT INTO todo_list (created, description, priority_id, term) VALUES (CURRENT_DATE, 'This is the eighth TODO', 3, CURRENT_DATE + INTERVAL '2' DAY);
+INSERT INTO todo_list (created, description, priority_id, term) VALUES (CURRENT_DATE, 'This is the nineth TODO', 1, CURRENT_DATE + INTERVAL '14' DAY);
+INSERT INTO todo_list (created, description, priority_id, term) VALUES (CURRENT_DATE, 'This is the tenth TODO', 1, CURRENT_DATE + INTERVAL '14' DAY);
+INSERT INTO todo_list (created, description, priority_id, term) VALUES (CURRENT_DATE, 'This is the eleventh TODO', 1, CURRENT_DATE + INTERVAL '14' DAY);
+INSERT INTO todo_list (created, description, priority_id, term) VALUES (CURRENT_DATE, 'This is the twelfth TODO', 1, CURRENT_DATE + INTERVAL '14' DAY);
+
+INSERT INTO priorities(priority) VALUES ('LOW');
+INSERT INTO priorities(priority) VALUES ('MEDIUM');
+INSERT INTO priorities(priority) VALUES ('HIGH');

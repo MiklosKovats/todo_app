@@ -41,7 +41,7 @@ public class TodoListServiceImp implements TodoListService {
 	public void erasureTodo(int id) {
 		todoRepository.deleteById(id);
 	}
-	
+		
 	public Todo getTodoById(int id) {
 		return todoRepository.findById(id);
 	}
@@ -62,5 +62,4 @@ public class TodoListServiceImp implements TodoListService {
 		PageRequest pageable = PageRequest.of(pageNumber - 1, pageSize, sort);
 		return todoRepository.findAll(pageable);
 	}
-	
 }
