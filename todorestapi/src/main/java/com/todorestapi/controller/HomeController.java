@@ -4,10 +4,14 @@ import java.text.ParseException;
 import java.time.LocalDate;
 import java.time.ZoneId;
 import java.util.Date;
+import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
@@ -15,24 +19,42 @@ import org.springframework.web.servlet.ModelAndView;
 import com.todorestapi.entity.Priority;
 import com.todorestapi.entity.Todo;
 import com.todorestapi.service.PriorityService;
-import com.todorestapi.service.TodoListService;
+import com.todorestapi.service.TodoListServiceImp;
 
 @Controller
 public class HomeController {
 	
-	private TodoListService todoListService;
+	private TodoListServiceImp todoListService;
 	private PriorityService priorityService;
 	
 	@Autowired
-	public HomeController (TodoListService todoListService, PriorityService priorityService) {
+	public HomeController (TodoListServiceImp todoListService, PriorityService priorityService) {
 		this.todoListService = todoListService;
 		this.priorityService = priorityService;
 	}
-
+	
 	@RequestMapping("/")
 	public String showTodoList(Model model) {
-		model.addAttribute("todoList", todoListService.getTodoList());
-		model.addAttribute("todo", new Todo());
+		return findPaginated(1, "id", "asc", model);
+	}
+	
+	@RequestMapping("/page/{pageNumber}")
+	public String findPaginated(	@PathVariable (value = "pageNumber") int pageNumber,
+									@RequestParam("sortField") String sortField,
+									@RequestParam("sortDir") String sortDir,
+									Model model) {
+		int pageSize = 5;
+		Page<Todo> page = todoListService.findPaginated(pageNumber, pageSize, sortField, sortDir);
+		List<Todo> todoList = page.getContent();
+		
+		model.addAttribute("currentPage", pageNumber);
+		model.addAttribute("totalPages", page.getTotalPages());
+		model.addAttribute("totalItems", page.getTotalElements());
+		model.addAttribute("todoList", todoList);
+		model.addAttribute("sortField", sortField);		
+		model.addAttribute("sortDir", sortDir);
+		model.addAttribute("reverseSortDir", sortDir.equals("asc") ? "desc" : "asc");
+		
 		return "todoList";
 	}
 	

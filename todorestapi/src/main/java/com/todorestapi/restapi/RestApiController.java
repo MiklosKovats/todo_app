@@ -11,15 +11,15 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.todorestapi.entity.Todo;
-import com.todorestapi.service.TodoListService;
+import com.todorestapi.service.TodoListServiceImp;
 
 @RestController
 @RequestMapping("/restapi")
 public class RestApiController {
 	
-	private TodoListService todoListService;	
+	private TodoListServiceImp todoListService;	
 	
-	public RestApiController(TodoListService todoListService) {
+	public RestApiController(TodoListServiceImp todoListService) {
 		this.todoListService = todoListService;
 	}	
 	
