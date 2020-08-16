@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="hu" layout:decorator="layouts/main">
+<head>
+	<title>TODO - List</title>
+</head>
+<body>
+
+	<div layout:fragment="content">	
+		<div class="container">
+			<table class="table">
+				<thead>
+					<tr>
+						<th scope="col">#</th>
+						<th scope="col">Description</th>
+						<th scope="col">Created</th>
+						<th scope="col">Term</th>
+						<th scope="col">Priority</th>
+					</tr>
+				</thead>
+				<tbody th:each="todo : ${todoList}">
+					<tr>						
+						<th th:text="${todo.id}" scope="row">1</th>
+						<td th:text="${todo.description}">description</td>
+						<td th:text="${#dates.format(todo.created, 'yyyy.MM.dd')}">Created time</td>
+						<td th:text="${#dates.format(todo.term, 'yyyy.MM.dd')}">Term</td>
+						<td th:text="${todo.priority.priority}">Priority</td>
+						<form action="#" th:action="@{/edit_todo}" method="post">
+							<td>
+								<input type="hidden" id="id" name="id" th:value="${todo.id}"/>
+								<button class="btn btn-sm btn-secondary btn-block" type="submit">Edit</button>
+							<td>							
+						</form>
+						<form action="#" th:action="@{/todo/remove}" method="post">
+							<td>
+								<input type="hidden" id="id" name="id" th:value="${todo.id}"/>
+								<button class="btn btn-sm btn-danger btn-block" type="submit">Delete</button>
+							<td>							
+						</form>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+	</div>
+	
+</body>
+</html>

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymleaf.org">
+<head>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+<title>TODO - List</title>
+
+<link rel="stylesheet" th:href="@{css/main.css}"
+	href="../static/css/main.css" />
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" />
+
+<link href='https://fonts.googleapis.com/css?family=Calibri'
+	rel='stylesheet' type='text/css' />
+<link href='https://fonts.googleapis.com/css?family=Exo'
+	rel='stylesheet' type='text/css' />
+
+</head>
+<body>
+
+	<div class="container">
+
+		<nav class="navbar navbar-default">
+			<div class="container-fluid">
+				<div class="navbar-header">
+					<button type="button" class="navbar-toggle collapsed"
+						data-toggle="collapse" data-target="#bs-example-navbar-collapse-5"
+						aria-expanded="false">
+						<span class="sr-only"></span> <span class="icon-bar"></span> <span
+							class="icon-bar"></span> <span class="icon-bar"></span>
+					</button>
+					<a class="navbar-brand" href="#">todolist.com</a>
+				</div>
+				<div class="collapse navbar-collapse"
+					id="bs-example-navbar-collapse-5">
+					<p class="navbar-text navbar-right">
+						Your IP address: <a href="#" class="navbar-link">127.0.0.1</a>
+					</p>
+				</div>
+			</div>
+		</nav>
+
+
+		<table class="table">
+			<thead>
+				<tr>
+					<th scope="col">#</th>
+					<th scope="col">Description</th>
+					<th scope="col">Created</th>
+					<th scope="col">Term</th>
+					<th scope="col">Priority</th>
+				</tr>
+			</thead>
+			<tbody th:each="todo : ${todoList}">
+				<tr>
+					<th th:text="${todo.id}" scope="row">1</th>
+					<td th:text="${todo.description}">description</td>
+					<td th:text="${#dates.format(todo.created, 'yyyy.MM.dd')}">Created time</td>
+					<td th:text="${#dates.format(todo.term, 'yyyy.MM.dd')}">Term</td>
+					<td th:text="${todo.priority.priority}">Priority</td>
+				</tr>
+			</tbody>
+		</table>
+
+		<footer>
+			<p>Created by Mike</p>
+		</footer>
+
+	</div>
+
+	<script
+		src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+	<script
+		src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+</body>
+</html>

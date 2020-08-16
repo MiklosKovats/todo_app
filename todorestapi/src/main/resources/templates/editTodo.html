@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="hu" layout:decorator="layouts/main">
+<head>
+	<title>TODO - List</title>
+</head>
+<body>
+
+	<div layout:fragment="content">	
+		<div class="container">
+
+			<table class="table">
+				<thead>
+					<tr>
+						<th scope="col">Description</th>						
+						<th scope="col">Term</th>
+						<th scope="col">Priority</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>		
+						<form action="#" th:action="@{/todo/update}" method="post">							
+							<td><input type="text" id="description" name="description" th:value="${todo.description}" placeholder="Description" required/></td>		
+							<td>
+								<input 	type="date" id="term" name="term" 
+										th:value="${#dates.format(todo.term, 'yyyy-MM-dd')}"
+										th:min="${#dates.format(currentDate, 'yyyy-MM-dd')}">
+							</td>																
+							<td>
+								<select id="priority" name="priority">
+									<option th:selected="${todo.priority.id}" th:each="priority : ${priorities}" th:value="${priority.id}" th:text="${priority.priority}"></option>
+								</select>
+							</td>
+							<td>
+								<input type="hidden" id="todo_id" name="todo_id" th:value="${todo.id}"/>						
+								<button class="btn btn-sm btn-info btn-block" type="submit">Edit</button>
+							<td>							
+						</form>
+					</tr>					
+				</tbody>
+			
+				
+			</table>
+		</div>
+	</div>
+	
+</body>
+</html>
