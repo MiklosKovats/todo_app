@@ -1,0 +1,135 @@
+{
+	"info": {
+		"_postman_id": "acc5fb74-48c0-47e9-989f-ae17d9f2bc9a",
+		"name": "Todolist",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "RestApi",
+			"item": [
+				{
+					"name": "/api/todolist",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://localhost:8080/restapi/todolist",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"restapi",
+								"todolist"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/api/create",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"description\": \"Create from json\",\r\n    \"term\": \"2020-08-13T22:00:00.000+00:00\",\r\n    \"priority\": {\"id\": 1}\r\n}\r\n\r\n"
+						},
+						"url": {
+							"raw": "http://localhost:8080/restapi/todo/create",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"restapi",
+								"todo",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/api/todo/update",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\": 19,\r\n    \"description\": \"Update from json\",\r\n    \"term\": \"2020-08-13T22:00:00.000+00:00\",\r\n    \"priority\": {\"id\": 2}\r\n}\r\n\r\n"
+						},
+						"url": {
+							"raw": "http://localhost:8080/restapi/todo/update",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"restapi",
+								"todo",
+								"update"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/api/todo/delete",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\": 17\r\n}\r\n\r\n"
+						},
+						"url": {
+							"raw": "http://localhost:8080/restapi/todo/delete",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"restapi",
+								"todo",
+								"delete"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "WebApplication",
+			"item": [],
+			"protocolProfileBehavior": {}
+		}
+	],
+	"protocolProfileBehavior": {}
+}

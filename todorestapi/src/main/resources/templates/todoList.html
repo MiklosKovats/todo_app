@@ -55,12 +55,12 @@
 					</div>
 					
 					<div class="col-sm-1">
-						<a th:if="${currentPage > 1}" th:href="@{/page/1}">First</a>
+						<a th:if="${currentPage > 1}" th:href="@{'/page/1?sortField=' + ${sortField} + '&sortDir=' + ${sortDir}}">First</a>
 						<span th:if="${currentPage == 1}">First</span>
 					</div>
 					
 					<div class="col-sm-1">
-						<a th:if="${currentPage > 1}" th:href="@{'/page/' + ${currentPage - 1}}">Previous</a>
+						<a th:if="${currentPage > 1}" th:href="@{'/page/' + ${currentPage - 1} + '?sortField=' + ${sortField} + '&sortDir=' + ${sortDir}}">Previous</a>
 						<span th:if="${currentPage == 1}">Previous</span>
 					</div>
 					
